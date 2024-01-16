@@ -36,10 +36,10 @@ def write_to_terminal(monitored_tickers, final_output_array):
 
 def write_to_csv(monitored_tickers, final_output_array, filename):
     headers = final_output_array[0]
-    os.makedirs("analyzed_sentiment_files", exist_ok=True)
+    os.makedirs("../analyzed_sentiment_files", exist_ok=True)
 
     # Construct the full path with the subdirectory
-    full_path = os.path.join("analyzed_sentiment_files", filename)
+    full_path = os.path.join("../analyzed_sentiment_files", filename)
     with pd.ExcelWriter(filename) as writer:
         for ticker in monitored_tickers:
             filtered_rows = [row for row in final_output_array if row[0] == ticker]
